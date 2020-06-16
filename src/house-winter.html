@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Room</title>
+    <meta charset="UTF-8">
+    <script src="../lib/aframe.min.js"></script>
+    <script src="../lib/aframe-event-set-component.min.js"></script>
+    <script src="../lib/super-hands.min.js"></script>
+    <script src="../lib/aframe-look-at-component.min.js"></script>
+    <script src="../lib/aframe-extras.min.js"></script>
+</head>
+    
+<body>
+
+	<a-scene renderer="antialias: true;
+                   colorManagement: true;
+                   sortObjects: true;
+                   physicallyCorrectLights: false;
+                   maxCanvasWidth: 1920;
+                   maxCanvasHeight: 1920;"
+             physics="gravity: -9.8; restitution: 0.5">
+<!--    <a-scene>-->
+        <a-assets>
+            
+            <a-asset-item id="house-winter" src="../scene/winter-loft/BrutalismWinter2.gltf"></a-asset-item>
+<!--
+            
+            <a-asset-item id="iphone-as" src="../obj/iphone_gltf/mobile-phone.gltf"></a-asset-item>
+            
+-->
+            <a-asset-item id="iphone-o" src="../obj/mobile-phone/mobile-phone.obj"></a-asset-item>
+            <a-asset-item id="iphone-m" src="../obj/mobile-phone/mobile-phone.mtl"></a-asset-item>
+                           
+                           
+        </a-assets>
+        
+        <a-entity progressive-controls>
+        </a-entity>
+    
+        
+        <!--        scene-->
+        <a-entity gltf-model=#house-winter
+                  position="0 0 0"
+                  scale="1 1 1"
+                  rotation="0 0 0">
+<!--            floor-->
+            <a-plane position="0 0 0"
+                 rotation="90 0 0"
+                 height="30" width="30" static-body></a-plane>
+        </a-entity>
+        
+        <!--        iphone-->
+        <a-entity obj-model="obj: #iphone-o; mtl: #iphone-m"
+                  position="0 2 0"
+                  scale="0.1 0.1 0.1"
+                  grabbable dynamic-body></a-entity>
+        <a-box position="0 3 0">
+        </a-box>
+        
+                        
+    </a-scene>
+</body>
+</html>
